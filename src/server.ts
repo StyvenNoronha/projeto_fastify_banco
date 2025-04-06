@@ -4,7 +4,9 @@ import { transactionsRoutes } from './routes/transactions'
 import { search } from './routes/search'
 const app = fastify()
 
-app.register(transactionsRoutes)
+app.register(transactionsRoutes, {
+  prefix: 'transactions',
+})
 
 app.register(search)
 
