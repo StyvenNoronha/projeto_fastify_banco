@@ -1,16 +1,12 @@
 import fastify from 'fastify'
-import { knex } from './database'
 import { env } from './env'
 import { transactionsRoutes } from './routes/transactions'
+import { search } from './routes/search'
 const app = fastify()
 
 app.register(transactionsRoutes)
 
-app.get('/buscar', async () => {
-  const test = await knex('transactions').select('*')
-
-  return test
-})
+app.register(search)
 
 app
   .listen({
