@@ -1,4 +1,4 @@
-import { knex } from '@/database'
+import { knex } from '../database'
 import { FastifyInstance } from 'fastify'
 
 export async function search(app: FastifyInstance) {
